@@ -20,7 +20,7 @@ import io.flutter.plugin.platform.PlatformView
 
 val TAG: String = "NativeTextInput"
 
-internal class NativeTextInput(context: Context, id: Int, creationParams: Map<String?, Any?>, channel: MethodChannel) : PlatformView, MethodChannel.MethodCallHandler {
+internal class NativeTextInput(context: Context?, id: Int, creationParams: Map<String?, Any?>, channel: MethodChannel) : PlatformView, MethodChannel.MethodCallHandler {
     private val context: Context
     private val scaledDensity: Float
     private val editText: EditText
@@ -32,7 +32,8 @@ internal class NativeTextInput(context: Context, id: Int, creationParams: Map<St
     override fun dispose() {}
 
     init {
-        this.context = context
+
+        this.context = context!!
         scaledDensity = context.resources.displayMetrics.scaledDensity
 
         editText = EditText(context)

@@ -544,7 +544,7 @@ class _NativeTextInputState extends State<NativeTextInput> {
       if (defaultTargetPlatform == TargetPlatform.android) {
         maxLineHeight += widget.minHeightPadding;
       }
-      return _contentHeight > maxLineHeight ? maxLineHeight : _contentHeight;
+      return _contentHeight > maxLineHeight ? _contentHeight : maxLineHeight;
     }
     if (_contentHeight > _minHeight) return _contentHeight;
     return _minHeight;
